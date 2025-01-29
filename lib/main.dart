@@ -27,6 +27,16 @@ class TikTokApp extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
+          textTheme: TextTheme(
+            // 모든 Text 위젯에 적용될 기본 스타일
+            bodyMedium: TextStyle(
+              // 자간 줄이기
+              height: 1.1, // 행간
+            ),
+          ).apply(
+            bodyColor: Colors.black, // 기본 텍스트 색상
+            displayColor: Colors.black,
+          ),
         ),
         home: MainNavigationScreen());
   }
