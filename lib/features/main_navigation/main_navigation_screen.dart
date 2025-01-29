@@ -59,7 +59,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.black,
+        color: _selectedIndex == 0 ? Colors.black : Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(Sizes.size1),
           child: Row(
@@ -70,6 +70,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 isSelected: _selectedIndex == 0,
                 icon: FontAwesomeIcons.house,
                 selectedIcon: FontAwesomeIcons.house,
+                selectedIndex: _selectedIndex,
                 onTap: () => _onTap(0),
               ),
               NavTab(
@@ -77,12 +78,13 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 isSelected: _selectedIndex == 1,
                 icon: FontAwesomeIcons.magnifyingGlass,
                 selectedIcon: FontAwesomeIcons.compass,
+                selectedIndex: _selectedIndex,
                 onTap: () => _onTap(1),
               ),
               Gaps.h24,
               GestureDetector(
                 onTap: _onPostVideoButtonTap,
-                child: const PostVideoButton(),
+                child: PostVideoButton(inverted: _selectedIndex != 0),
               ),
               Gaps.h24,
               NavTab(
@@ -90,6 +92,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 isSelected: _selectedIndex == 3,
                 icon: FontAwesomeIcons.message,
                 selectedIcon: FontAwesomeIcons.solidMessage,
+                selectedIndex: _selectedIndex,
                 onTap: () => _onTap(3),
               ),
               NavTab(
@@ -97,6 +100,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 isSelected: _selectedIndex == 4,
                 icon: FontAwesomeIcons.user,
                 selectedIcon: FontAwesomeIcons.solidUser,
+                selectedIndex: _selectedIndex,
                 onTap: () => _onTap(4),
               ),
             ],

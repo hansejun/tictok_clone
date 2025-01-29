@@ -23,6 +23,7 @@ class _VideoPostState extends State<VideoPost>
       VideoPlayerController.asset('assets/videos/video.mp4');
 
   bool _isPaused = false;
+
   final Duration _duration = const Duration(milliseconds: 200);
 
   late final AnimationController _animationController;
@@ -39,17 +40,19 @@ class _VideoPostState extends State<VideoPost>
 
   void _initializeVideoPlayer() async {
     await _videoPlayerController.initialize();
-    setState(() {});
+
     _videoPlayerController.addListener(_onVideoChange);
   }
 
   void _onVisibilityChanged(VisibilityInfo info) {
-    if (!_videoPlayerController.value.isInitialized) return;
-
     if (info.visibleFraction == 1 &&
         !_isPaused &&
         !_videoPlayerController.value.isPlaying) {
       _videoPlayerController.play();
+    }
+
+    if (_videoPlayerController.value.isPlaying && info.visibleFraction == 0) {
+      _onTogglePause();
     }
   }
 
