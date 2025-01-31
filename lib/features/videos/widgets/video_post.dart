@@ -45,7 +45,7 @@ class _VideoPostState extends State<VideoPost>
   }
 
   void _onVisibilityChanged(VisibilityInfo info) {
-    if (!_videoPlayerController.value.isInitialized) return;
+    if (!mounted) return;
 
     if (info.visibleFraction == 1 &&
         !_isPaused &&
