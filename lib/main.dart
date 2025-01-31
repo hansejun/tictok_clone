@@ -44,6 +44,25 @@ class TikTokApp extends StatelessWidget {
             displayColor: Colors.black,
           ),
         ),
+        builder: (context, child) {
+          return ClipRect(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 1024),
+                child: Navigator(
+                  onGenerateRoute: (settings) {
+                    if (settings.name == '/') {
+                      return MaterialPageRoute(
+                        builder: (context) => child!,
+                      );
+                    }
+                    return null;
+                  },
+                ),
+              ),
+            ),
+          );
+        },
         home: MainNavigationScreen());
   }
 }

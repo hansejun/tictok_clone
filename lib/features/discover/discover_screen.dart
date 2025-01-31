@@ -84,7 +84,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                 Sizes.size6,
               ),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: width > Breakpoints.lg ? 5 : 2,
+                crossAxisCount: width > Breakpoints.lg ? 4 : 2,
                 crossAxisSpacing: Sizes.size10,
                 mainAxisSpacing: Sizes.size10,
                 childAspectRatio: 9 / 20,
