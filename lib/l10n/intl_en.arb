@@ -1,0 +1,9 @@
+{
+  "signUpTitle": "Sign up for {nameOfTheApp}",
+  "loginTitle": "Log into your {nameOfTheApp} account",
+  "signUpSubtitle": "Create a profile, follow other accounts, make your own videos, and more.",
+  "emailPasswordButton": "Use email & password",
+  "continueAppleButton": "Continue with Apple",
+  "alreadyHaveAnAccount": "Already have an account?",
+  "logIn": "Log in"
+}
