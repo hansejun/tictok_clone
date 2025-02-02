@@ -20,30 +20,75 @@ class TikTokApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'TikTok Clone',
+        debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.dark,
         theme: ThemeData(
-          primaryColor: Color(0xFFE9435A),
-          scaffoldBackgroundColor: Colors.white,
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            elevation: 0,
-            titleTextStyle: TextStyle(
-              color: Colors.black,
-              fontSize: Sizes.size16 + Sizes.size2,
-              fontWeight: FontWeight.w600,
+            brightness: Brightness.light,
+            primaryColor: Color(0xFFE9435A),
+            scaffoldBackgroundColor: Colors.white,
+            bottomAppBarTheme: BottomAppBarTheme(
+              color: Colors.grey.shade50,
             ),
-          ),
-          textTheme: TextTheme(
-            // 모든 Text 위젯에 적용될 기본 스타일
-            bodyMedium: TextStyle(
-              // 자간 줄이기
-              height: 1.1, // 행간
+            appBarTheme: const AppBarTheme(
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.black,
+              elevation: 0,
+              titleTextStyle: TextStyle(
+                color: Colors.black,
+                fontSize: Sizes.size16 + Sizes.size2,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ).apply(
-            bodyColor: Colors.black, // 기본 텍스트 색상
-            displayColor: Colors.black,
-          ),
-        ),
+            tabBarTheme: TabBarTheme(
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey.shade500,
+              indicatorColor: Colors.black,
+            ),
+            listTileTheme: const ListTileThemeData(
+              iconColor: Colors.black,
+            ),
+            textTheme: Typography.blackMountainView
+                .copyWith(
+                  bodyMedium: const TextStyle(
+                    height: 1.1,
+                    color: Colors.black,
+                  ),
+                )
+                .apply(
+                  bodyColor: Colors.black,
+                  displayColor: Colors.black,
+                )),
+        darkTheme: ThemeData(
+            brightness: Brightness.dark,
+            primaryColor: Color(0xFFE9435A),
+            scaffoldBackgroundColor: Colors.black,
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.grey.shade900,
+              titleTextStyle: TextStyle(
+                color: Colors.white,
+                fontSize: Sizes.size16 + Sizes.size2,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            bottomAppBarTheme: BottomAppBarTheme(
+              color: Colors.grey.shade900,
+            ),
+            tabBarTheme: TabBarTheme(
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.grey.shade700,
+              indicatorColor: Colors.white,
+            ),
+            textTheme: Typography.whiteMountainView
+                .copyWith(
+                  bodyMedium: const TextStyle(
+                    height: 1.1,
+                    color: Colors.white,
+                  ),
+                )
+                .apply(
+                  bodyColor: Colors.white,
+                  displayColor: Colors.white,
+                )),
         builder: (context, child) {
           return ClipRect(
             child: Center(

@@ -37,13 +37,11 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
             children: const [
               FaIcon(
                 FontAwesomeIcons.flag,
-                color: Colors.black,
                 size: Sizes.size20,
               ),
               Gaps.h32,
               FaIcon(
                 FontAwesomeIcons.ellipsis,
-                color: Colors.black,
                 size: Sizes.size20,
               ),
             ],
@@ -102,7 +100,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
             bottom: 0,
             width: MediaQuery.of(context).size.width,
             child: BottomAppBar(
-              color: Colors.grey.shade50,
+              color: Theme.of(context).appBarTheme.backgroundColor,
               child: Row(
                 children: [
                   const Expanded(child: TextField()),
